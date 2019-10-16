@@ -7,7 +7,7 @@ from .models import Chat, Comment
 
 class ChatListView(generic.ListView):
     model = Chat
-    
+
 
 
 class ChatDetailView(generic.DetailView):
@@ -19,7 +19,6 @@ class CommentCreateView(generic.CreateView):
     fields = ('text',)
 
     def form_valid(self, form):
-        # import pdb; pdb.set_trace()
         form.instance.created_by = self.request.user
         form.instance.chat_id = self.kwargs['pk']
         return super().form_valid(form)
