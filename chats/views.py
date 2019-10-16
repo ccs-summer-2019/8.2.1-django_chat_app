@@ -9,7 +9,6 @@ class ChatListView(generic.ListView):
     model = Chat
 
 
-
 class ChatDetailView(generic.DetailView):
     model = Chat
 
